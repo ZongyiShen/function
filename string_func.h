@@ -31,6 +31,36 @@ void split(string s, string result[])
     ss.str("");
     ss.clear();
 }
+string *split(string s)
+{
+    string temp = "";
+    int spacenum = getspace(s);
+    //int spacelocate[spacenum];
+    string *result;
+    result = new string[spacenum + 1];
+    int j = 0;
+    int k = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == ' ')
+        {
+            result[j] = temp;
+            temp = "";
+            k = 0;
+            j++;
+        }
+        else
+        {
+            temp = temp + s[i];
+            k++;
+        }
+    }
+    result[j] = temp;
+    temp = "";
+    k = 0;
+    j++;
+    return result;
+}
 #endif
 /*use split
 #include "./func.h"
