@@ -61,6 +61,17 @@ string *split(string s)
     j++;
     return result;
 }
+vector<string> split(string s)
+{
+    stringstream ss(s);
+    string dir;
+    vector<string> r;
+    while (getline(ss, dir, ' '))
+    {
+        r.push_back(dir);
+    }
+    return r;
+}
 #endif
 /*use split
 #include "./func.h"
@@ -78,6 +89,22 @@ int main()
             puts(ls[i].c_str());
         }
         getline(cin, s);
+    }
+    return 0;
+}
+*/
+/*
+use split v2
+int main()
+{
+    string input;
+    getline(cin, input);
+    //cout << getSpace(input);
+    vector<string> s;
+    s = split(input);
+    for (int i = 0; i < s.size(); i++)
+    {
+        cout << s[i] << endl;
     }
     return 0;
 }
